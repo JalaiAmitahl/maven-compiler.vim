@@ -4,9 +4,35 @@ A pathogen installable module for VIM which readies VIM to be used as a Java dev
 
 ## Installation
 
+The Maven compiler setup can be installed in a few ways.  The preferred method is by using [Pathogen](https://github.com/tpope/vim-pathogen), but it can also be  
+installed by unzipping the package to your ~/.vim/ directory.
+
 ### Pathogen
 
+To install using the Pathogen vim script do the following:
+```
+git clone https://github.com/JalaiAmitahl/maven-compiler.vim ~/.vim/bundle/
+```
+
 ### Copy / Move
+
+To install using the copy / move method, do the following in any directory:
+
+```bash
+if [ ! -d "~/.vim/ftdetect"]; then
+    mkdir ~/.vim/ftdetect
+fi
+if [ ! -d "~/.vim/compiler"]; then
+    mkdir ~/.vim/compiler
+fi
+if [ ! -d "~/.vim/syntax"]; then
+    mkdir ~/.vim/syntax
+fi
+git clone https://github.com/JalaiAmitahl/maven-compiler.vim
+cp maven-compiler.vim/ftdetect/* ~/.vim/ftdetect/
+cp maven-compiler.vim/compiler/* ~/.vim/compiler/
+cp maven-compiler.vim/syntax/* ~/.vim/syntax/
+```
 
 ## Contents
 
