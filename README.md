@@ -1,7 +1,44 @@
 # Maven Compiler Setup for VIM
 
-A VIM maven compiler module / library.
+A pathogen installable module for VIM which readies VIM to be used as a Java development environment using the Maven build / dependency management system from Apache.
 
-## TODO:
+## Installation
 
-Add proper readme.
+### Pathogen
+
+### Copy / Move
+
+## Contents
+
+As a VIM module, this package contains the following:
+
+1. A syntax file containing highlighting rules for Maven's pom.xml files.
+1. A compiler file containing the compiler setup and error format setup.
+1. A file type detection script for pom.xml files to setup the filetype and syntax type for pom editing.
+
+## Component Notes
+
+### Syntax Script
+
+* The syntax file currently hand codes / matches the full Maven POM notes.
+* There are likely some tags which are handled in the proper Maven XSD that I have missed at this time.  I will rectify that soon-ish.
+
+### Compiler Script
+
+* The compiler script catches and tosses plenty of information.  This may be tweaked in the future.
+* The build result line will be displayed.
+* The quick fix window does not open by default.  I need to determine how to fix this.
+
+### File type detection script
+
+* The file detection script is to auto-detect the pom.xml file type and set the filetype and syntax values to *pom*
+
+## Additional Info
+
+Originally the compiler script set a few mappings, but these have been removed in the interest of not futzing with users settings. I now use autocmd to set the following on java file types:
+
+- autocmd Filetype java no &lt;F5&gt; :make clean package&lt;CR&gt;
+- autocmd Filetype java no &lt;S-F5&gt; :make clean package site site:stage&lt;CR&gt;
+- autocmd Filetype java no &lt;C-F5&gt; :make clean&lt;CR&gt;
+- autocmd Filetype java no &lt;F2&gt; :make clean deploy site site:stage site:deploy&lt;CR&gt;
+

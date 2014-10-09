@@ -11,11 +11,6 @@ if exists(":CompielrSet") != 2 " older Vim always used :setlocal
     command! -nargs=* CompilerSet setlocal <args>
 endif
 
-no <F5> :make clean package<CR>
-no <S-F5> :make clean package site site:stage<CR>
-no <C-F5> :make clean<CR>
-no <F2> :make clean deploy site site:stage site:deploy<CR>
-
 CompilerSet makeprg=mvn
 
 " Catch POM specific errors.
@@ -39,7 +34,6 @@ CompilerSet errorformat+=%G[INFO]\ %s%[A-Z\ ]%#\ %#..%#\ %m,
 " Toss the rest
 CompilerSet errorformat+=%-G[%t%[A-Z]%#]\ %#-%#%m,
 CompilerSet errorformat+=%-G\ %#-%#,
-
 CompilerSet errorformat+=%-Z[%[A-Z]%#]\ %#-%#%.%#,
 CompilerSet errorformat+=%-Z[%[A-Z]%#]\ %#-\>%.%#,
 CompilerSet errorformat+=%-Z[%[A-Z]%#]\ %#%[0-9]%#\ error%.%#,
