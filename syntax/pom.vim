@@ -29,7 +29,7 @@ syn match inceptionYearMatch "<\=inceptionYear/\=>.*" contains=tagContentsRegion
 syn match licensesMatch "</\=licenses\=/\=>"
 syn match distributionMatch "</\=distribution/\=>.*" contains=tagContentsRegion
 syn match commentsMatch "</\=comments/\=>.*" contains=tagContentsRegion
-syn match organizationMatch "</\=organization\=/\=>" contains=tagContentsRegion
+syn match organizationMatch "</\=organization\=/\=>.*" contains=tagContentsRegion
 syn match organizationMatch "</\=organizationUrl\=/\=>.*" contains=urlContentsRegion
 syn match developerMatch "</\=developers\=/\=>"
 syn match idMatch "</\=id/\=>.*" contains=tagContentsRegion
