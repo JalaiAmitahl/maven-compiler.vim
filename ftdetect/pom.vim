@@ -4,5 +4,5 @@
 " Last Modified: 2014 Oct 06
 
 au! BufRead,BufNewFile pom.xml set filetype=pom
-"au! BufRead,BufNewFile pom.xml set syntax=xml
+au! BufRead,BufNewFile pom.xml set syntax=pom
 
