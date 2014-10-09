@@ -47,12 +47,21 @@ As a VIM module, this package contains the following:
 
 * The syntax file currently hand codes / matches the full Maven POM notes.
 * There are likely some tags which are handled in the proper Maven XSD that I have missed at this time.  I will rectify that soon-ish.
+* To manually use the syntax script on a file not identified as a pom file:
+    ` :set syntax=pom`
 
 ### Compiler Script
 
 * The compiler script catches and tosses plenty of information.  This may be tweaked in the future.
 * The build result line will be displayed.
 * The quick fix window does not open by default.  I need to determine how to fix this.
+* To manually use the compiler on a java or pom.xml file:
+    ` :compiler mvn`
+* To use auto command to set the compiler any time a pom or java file is opened (assuming the pom ftdetect script is used):
+    ```vimrc
+    autocommand Filetype java compiler mvn
+    autocommand Filetype pom compiler mvn
+    ```
 
 ### File type detection script
 
@@ -62,10 +71,11 @@ As a VIM module, this package contains the following:
 
 Originally the compiler script set a few mappings, but these have been removed in the interest of not futzing with users settings. I now use autocmd to set the following on java file types:
 
-- autocmd Filetype java no &lt;F5&gt; :make clean package&lt;CR&gt;
-- autocmd Filetype java no &lt;S-F5&gt; :make clean package site site:stage&lt;CR&gt;
-- autocmd Filetype java no &lt;C-F5&gt; :make clean&lt;CR&gt;
-- autocmd Filetype java no &lt;F2&gt; :make clean deploy site site:stage site:deploy&lt;CR&gt;
+- autocmd Filetype java no &lt;F2&gt; :make clean package&lt;CR&gt;
+- autocmd Filetype java no &lt;S-F2&gt; :make clean package site site:stage&lt;CR&gt;
+- autocmd Filetype java no &lt;C-F2&gt; :make clean&lt;CR&gt;
+- autocmd Filetype java no &lt;F3&gt; :make 
+- autocmd Filetype java no &lt;S-F3&gt; :make clean deploy site site:stage site:deploy&lt;CR&gt;
 
 ## License
 
