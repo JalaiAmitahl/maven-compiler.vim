@@ -4,8 +4,7 @@ A pathogen installable module for VIM which readies VIM to be used as a Java dev
 
 ## Installation
 
-The Maven compiler setup can be installed in a few ways.  The preferred method is by using [Pathogen](https://github.com/tpope/vim-pathogen), but it can also be  
-installed by unzipping the package to your ~/.vim/ directory.
+The Maven compiler setup can be installed in a few ways.  The preferred method is by using [Pathogen](https://github.com/tpope/vim-pathogen), but it can also be installed by unzipping the package to your ~/.vim/ directory.
 
 ### Pathogen
 
@@ -68,3 +67,6 @@ Originally the compiler script set a few mappings, but these have been removed i
 - autocmd Filetype java no &lt;C-F5&gt; :make clean&lt;CR&gt;
 - autocmd Filetype java no &lt;F2&gt; :make clean deploy site site:stage site:deploy&lt;CR&gt;
 
+## License
+
+Copyright (c) Dan Taylor. Distributed under the same terms as Vim itself.
