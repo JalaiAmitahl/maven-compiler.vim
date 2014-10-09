@@ -56,9 +56,12 @@ As a VIM module, this package contains the following:
 * The build result line will be displayed.
 * The quick fix window does not open by default.  I need to determine how to fix this.
 * To manually use the compiler on a java or pom.xml file:
+
     ` :compiler mvn`
+
 * To use auto command to set the compiler any time a pom or java file is opened (assuming the pom ftdetect script is used):
-    ```vimrc
+
+    ```
     autocommand Filetype java compiler mvn
     autocommand Filetype pom compiler mvn
     ```
