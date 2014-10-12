@@ -14,8 +14,9 @@ endif
 CompilerSet makeprg=mvn
 
 " Catch POM specific errors.
-CompilerSet errorformat=[%tRROR]\ %#Malformed\ POM\ %f:\ %m@%l:%c%.%#,
-CompilerSet errorformat+=[%tRROR]\ %#Non-parseable\ POM\ %f:\ %m\ %#\\@\ line\ %l\\,\ column\ %c%.%#,
+CompilerSet errorformat=%+E[%tRROR]\ %#Malformed\ POM\ %f:\ %m@%l:%c%.%#,
+CompilerSet errorformat+=%+E[%tRROR]\ %#Non-parseable\ POM\ %f:\ %m\ %#\\@\ line\ %l\\,\ column\ %c%.%#,
+CompilerSet errorformat+=%+E[%tRROR]\ %#Exit\ code:\ %n\ -\ %f:%l:\ %m,
 
 " Capture & display any errors executing plugin goals
 CompilerSet errorformat+=%+A[%t%[A-Z]%#]\ %#Failed\ to\ execute\ goal%.%#,
@@ -32,11 +33,4 @@ CompilerSet errorformat+=%A%f:[%l\\,%c]\ %m,
 CompilerSet errorformat+=%G[INFO]\ %s%[A-Z\ ]%#\ %#..%#\ %m,
 
 " Toss the rest
-CompilerSet errorformat+=%-G[%t%[A-Z]%#]\ %#-%#%m,
-CompilerSet errorformat+=%-G\ %#-%#,
-CompilerSet errorformat+=%-Z[%[A-Z]%#]\ %#-%#%.%#,
-CompilerSet errorformat+=%-Z[%[A-Z]%#]\ %#-\>%.%#,
-CompilerSet errorformat+=%-Z[%[A-Z]%#]\ %#%[0-9]%#\ error%.%#,
-CompilerSet errorformat+=%C[%t%[A-Z]%#]\ %#%m,
-CompilerSet errorformat+=%-G[%t%[A-Z]%#]\ %#%m,
-
+CompilerSet errorformat+=%-G%.%#,

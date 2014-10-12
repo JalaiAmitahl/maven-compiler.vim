@@ -16,6 +16,7 @@ syn match xmlError "\(\s\+<\s\+\|&\s\+\)"
 " POM defined tag level matches
 syn match projectMatch "<project .*>" contains=attributeString
 syn match projectMatch "</project>"
+syn match parentMatch "</\=parent>"
 syn match modelVersionMatch "</\=modelVersion>.*" contains=versionStringMatch,badVersionStringMatch
 syn match groupIdMatch "</\=groupId>.*" contains=tagContentsRegion
 syn match artifactIdMatch "</\=artifactId>.*" contains=tagContentsRegion
@@ -28,7 +29,7 @@ syn match inceptionYearMatch "<\=inceptionYear/\=>.*" contains=tagContentsRegion
 syn match licensesMatch "</\=licenses\=/\=>"
 syn match distributionMatch "</\=distribution/\=>.*" contains=tagContentsRegion
 syn match commentsMatch "</\=comments/\=>.*" contains=tagContentsRegion
-syn match organizationMatch "</\=organization\=/\=>" contains=tagContentsRegion
+syn match organizationMatch "</\=organization\=/\=>.*" contains=tagContentsRegion
 syn match organizationMatch "</\=organizationUrl\=/\=>.*" contains=urlContentsRegion
 syn match developerMatch "</\=developers\=/\=>"
 syn match idMatch "</\=id/\=>.*" contains=tagContentsRegion
@@ -94,6 +95,7 @@ hi def link validEmailString Constant
 
 " Default tag colours
 hi def link projectMatch Type
+hi def link parentMatch Type
 hi def link modelVersionMatch Type
 hi def link groupIdMatch Type
 hi def link artifactIdMatch Type
