@@ -20,11 +20,11 @@ CompilerSet errorformat+=%+E[%tRROR]\ %#Non-parseable\ POM\ %f:\ %m\ %#\\@\ line
 " Catch any error / warning / info in a specific file at a specific
 " line/column pair.
 "CompilerSet errorformat+=%A[%t%[A-Z]%#]\ %f:[%l\\,%c]\ %m,%C%.%#,%Z
+CompilerSet errorformat+=%+E[%tRROR]\ %#Exit\ code:\ %n\ -\ %f:%l:\ %m,%C%.%#,%Z
 CompilerSet errorformat+=%A[%t%[A-Z]%#]\ %f:[%l\\,%c]\ %m,%C[%t%[A-Z]%#]%#\ %#symbol:\s%#%m,%C[%t%[A-Z]%#]%#\ %#location:\s%#%m,%C%.%#,%Z
 CompilerSet errorformat+=%A%f:[%l\\,%c]\ %m,%C%.%#,%Z
 
 " Misc file errors
-CompilerSet errorformat+=%+E[%tRROR]\ %#Exit\ code:\ %n\ -\ %f:%l:\ %m,%C%.%#,%Z
 CompilerSet errorformat+=%+EFailed\ tests:\ %m,%C%.%#,%Z
 CompilerSet errorformat+=%+E[%tRROR]\ Please\ refer\ to\ %f\ %.%#,%C%.%#,%Z
 
