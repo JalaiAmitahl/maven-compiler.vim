@@ -19,8 +19,12 @@ CompilerSet errorformat+=%+E[ERROR]\ %#Malformed\ POM\ %f:%m\ %#\\@\ %.%#\\,\ li
 " Java related build messages
 CompilerSet errorformat+=%+I[INFO]\ BUILD\ %m,%Z
 CompilerSet errorformat+=%E[ERROR]\ %f:[%l\\,%c]\ %m,%Z
+CompilerSet errorformat+=%A[%t%[A-Z]%#]\ %f:[%l\\,%c]\ %m,%Z
+CompilerSet errorformat+=%A%f:[%l\\,%c]\ %m,%Z
 
 " jUnit related build messages
 CompilerSet errorformat+=%+E\ \ %#test%m,%Z
+CompilerSet errorformat+=%+E[ERROR]\ Please\ refer\ to\ %f\ for\ the\ individual\ test\ results.
+
+" Misc message removal
 CompilerSet errorformat+=%-G%.%#,%Z
-CompilerSet errorformat+=%-G\Z%\\(%^%$%\\)
