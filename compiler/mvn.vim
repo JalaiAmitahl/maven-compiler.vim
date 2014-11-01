@@ -13,29 +13,14 @@ endif
 
 CompilerSet makeprg=mvn
 
-" Catch POM specific errors.
-CompilerSet errorformat=%+E[%tRROR]\ %#Malformed\ POM\ %f:\ %m@%l:%c%.%#,%Z
-CompilerSet errorformat+=%+E[%tRROR]\ %#Non-parseable\ POM\ %f:\ %m\ %#\\@\ line\ %l\\,\ column\ %c%.%#,%Z
+" POM related messages
+CompilerSet errorformat=%E[ERROR]\ %#Non-parseable\ POM\ %f:\ %m\ %#\\@\ line\ %l\\,\ column\ %c%.%#,%Z,
+CompilerSet errorformat+=%+E[ERROR]\ %#Malformed\ POM\ %f:%m\ %#\\@\ %.%#\\,\ line\ %l\\,\ column\ %c%.%#,%Z,
+" Java related build messages
+CompilerSet errorformat+=%+I[INFO]\ BUILD\ %m,%Z
+CompilerSet errorformat+=%E[ERROR]\ %f:[%l\\,%c]\ %m,%Z
 
-" Catch any error / warning / info in a specific file at a specific
-" line/column pair.
-"CompilerSet errorformat+=%A[%t%[A-Z]%#]\ %f:[%l\\,%c]\ %m,%C%.%#,%Z
-CompilerSet errorformat+=%+E[%tRROR]\ %#Exit\ code:\ %n\ -\ %f:%l:\ %m,%C%.%#,%Z
-CompilerSet errorformat+=%A[%t%[A-Z]%#]\ %f:[%l\\,%c]\ %m,%C[%t%[A-Z]%#]%#\ %#symbol:\s%#%m,%C[%t%[A-Z]%#]%#\ %#location:\s%#%m,%C%.%#,%Z
-CompilerSet errorformat+=%A%f:[%l\\,%c]\ %m,%C%.%#,%Z
-
-" Misc file errors
-CompilerSet errorformat+=%+EFailed\ tests:\ %m,%C%.%#,%Z
-CompilerSet errorformat+=%+E[%tRROR]\ Please\ refer\ to\ %f\ %.%#,%C%.%#,%Z
-
-" Capture & display any errors executing plugin goals
-CompilerSet errorformat+=%+A[%t%[A-Z]%#]\ %#Failed\ to\ execute\ goal%.%#,%C%.%#,%Z
-
-" Capture & display build success information
-CompilerSet errorformat+=%+I[%t%[A-Z]%#]\ %#BUILD\ %.%#,%C%.%#,%Z
-
-" Catch module build status
-CompilerSet errorformat+=%G[INFO]\ %s%[A-Z\ ]%#\ %#..%#\ %m,%C%.%#,%Z
-
-" Toss the rest
-CompilerSet errorformat+=%-G%.%#,%C%.%#,%Z,
+" jUnit related build messages
+CompilerSet errorformat+=%+E\ \ %#test%m,%Z
+CompilerSet errorformat+=%-G%.%#,%Z
+CompilerSet errorformat+=%-G\Z%\\(%^%$%\\)
