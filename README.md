@@ -40,6 +40,7 @@ As a VIM module, this package contains the following:
 1. A syntax file containing highlighting rules for Maven's pom.xml files.
 1. A compiler file containing the compiler setup and error format setup.
 1. A file type detection script for pom.xml files to setup the filetype and syntax type for pom editing.
+1. A plugin to sort the quick fix list and strip duplicate and blank entries.
 
 ## Component Notes
 
@@ -69,6 +70,14 @@ As a VIM module, this package contains the following:
 ### File type detection script
 
 * The file detection script is to auto-detect the pom.xml file type and set the filetype and syntax values to *pom*
+
+### Quick fix sort plugin
+
+This script is based off of the script found here: [Automatically Sort Quickfix List for VIM](http://vim.wikia.com/wiki/Automatically_sort_Quickfix_list).
+
+Modifications:
+1. Strip out any entries which don't have a text value.
+
 
 ## Additional Info
 
